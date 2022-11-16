@@ -106,6 +106,28 @@ a {
     cursor: pointer;
     display: none;
 }
+/* sortbar */
+
+.sort-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    color:#5e5e5e;
+}
+
+.sort-bar div {
+    text-align: center;
+}
+
+.sort-bar i {
+    font-size: 1.2rem;
+}
+
+.sort-bar p{
+    font-size: 12px;
+}
+/* end sortbar */
+
 /* Navbar end */
 
 @media screen and (max-width:940px) {
