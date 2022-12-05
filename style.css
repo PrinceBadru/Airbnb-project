@@ -14,6 +14,14 @@ li {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+grey {
+    color: #6d6d6d;
+}
+
 a {
     text-decoration: none;
     color:#333
@@ -55,6 +63,7 @@ a {
 
 .navbar h1 {
     color: red;
+    font-size: 24px;
 }
 
 .search {
@@ -100,11 +109,11 @@ a {
 
 .nav-menu {
     display: flex;
+    
 }
 
 .mobile {
-    cursor: pointer;
-    display: none;
+    display: block;
 }
 /* sortbar */
 
@@ -126,9 +135,117 @@ a {
 .sort-bar p{
     font-size: 12px;
 }
+
+ 
+
 /* end sortbar */
 
+/* listings */
+.listings {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:1rem;
+}
+
+.listings .card {
+    max-width: 300px;
+    width:100%;
+    font-size: .9rem;
+}
+
+.listings .card-title {
+    display:flex;
+    justify-content: space-between;
+}
+
+.listings img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+   
+}
+
+.listings p {
+    padding-bottom: 4px;
+}
+
+img {
+    border-radius: 15px;
+}
+
+/* listings end */
+/* Featured */
+
+.featured {
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.featured .title {
+    padding: 1rem 0;
+}
+
+featured h1 {
+    border-bottom: 4px solid #ff385c;
+    display:inline;
+}
+
+.featured-wrapper {
+    --gap: 1rem;
+    --num-cols:5;
+    --row-height:200px;
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols),1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+}
+
+.featured img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured .main {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+/* Featured end */
 /* Navbar end */
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eeeeee;
+    padding: 1rem 0;
+}
+
+.footer .left-menu, .right-menu{
+    display: flex;
+}
+
+.footer .left-menu li {
+    padding-right: 1rem;
+}
+
+.footer .right-menu li {
+    padding-left: 1rem;
+}
+
+.center {
+    display: flex;
+}
+
+.center a {
+    margin: auto;
+    font-size: 2rem;
+}
+
+/* footer end */
 
 @media screen and (max-width:940px) {
     .topbar {
@@ -136,6 +253,7 @@ a {
         justify-content: space-between;
         align-items: center;
     }
+  
 
     .navbar {
         grid-template-columns: repeat(2,1fr);
@@ -147,5 +265,33 @@ a {
         padding: 10px 0;
         order: 3;
         grid-column: span 2;
+    }
+    .mobile{
+        display: block;
+    }
+}
+
+@media screen and (max-width:680px){
+    /* top bar */
+    .topbar .intro,
+    p {
+        font-size: 0.8rem;
+    }
+
+    .listings {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .featured-wrapper {
+        --gap:1rem;
+        --num-cols:2;
+    }
+
+    .featured .main {
+        grid-column: span 2;
+    }
+
+    .footer .left-menu, .right-menu {
+        flex-direction: column;
     }
 }
